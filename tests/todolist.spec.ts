@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { LoginPage } from '../pages/Login';
 
 test.describe("Suite de pruebas", () => {
 
     test.beforeEach(async ({ page }) => {
-        await page.goto('http://127.0.0.1:5000/#intro');
-        await page.getByRole('navigation').getByRole('link', { name: 'Login' }).click();
-        await page.getByText('Get a test account').click();
-        await page.locator('#login-btn').click();
+        const loginPage = new LoginPage(page)
+        loginPage.navigate()
+        loginPage.LoginWithNewUser()
       });
 
     test('Add task', async ({ page }) => {
