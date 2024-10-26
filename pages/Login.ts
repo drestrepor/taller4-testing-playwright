@@ -17,7 +17,6 @@ export class LoginPage {
         await this.page.getByText('Get a test account').click();
         // await expect(this.page.locator("#toast-container")).toBeVisible()
         // await expect(this.page.locator("#username-input")).not.toContainText("")
-        await this.page.waitForTimeout(2000)
         // await this.page.waitForFunction(async () => {
 
         // })
